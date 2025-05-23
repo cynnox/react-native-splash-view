@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 
 object SplashView {
   private var splashDialog: Dialog? = null
@@ -50,6 +53,11 @@ object SplashView {
             setDecorFitsSystemWindows(false) // Ensures proper layout behind the status bar
           }
         }
+        val controller = WindowCompat.getInsetsController(window!!, window!!.decorView)
+                controller.systemBarsBehavior =
+                    WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                controller.hide(WindowInsetsCompat.Type.navigationBars())
+
         show()
       }
     }

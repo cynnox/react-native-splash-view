@@ -82,7 +82,7 @@ android {
   sourceSets {
   main {
     if (isNewArchitectureEnabled()) {
-      java.srcDirs += ["src/main/java", "generated", "src/newarch/java"]
+      java.srcDirs += ["src/main/java", "generated/java", "src/newarch/java"]
     } else {
       java.srcDirs += ["src/main/java", "src/oldarch/java"] // move old arch files here
     }

@@ -80,7 +80,8 @@ lib/
 
 # React Native Codegen
 ios/generated
-android/generated
+android/generated/*
+!android/generated/com/splashview/NativeSplashViewSpec.java
 
 # React Native Nitro Modules
 nitrogen/
